@@ -1089,36 +1089,60 @@
       }
     }
 
-    /* Responsive */
+    /* =================================================================== */
+    /* ============== BLOCO RESPONSIVO (CELULAR) ======================== */
+    /* =================================================================== */
     @media (max-width: 768px) {
+      /* --- Geral --- */
+      body {
+        font-size: 16px; /* Base font size for mobile */
+      }
+      
+      .section {
+        padding: 3rem 1.5rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .section-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+      }
+
+      /* --- Header --- */
+      .header {
+        padding: 1rem 1.5rem;
+      }
+      .logo h1 {
+        font-size: 1.3rem;
+      }
+
+      /* --- Hero Section --- */
+      .hero-section {
+        padding: 1.5rem;
+      }
       .hero-title {
         font-size: clamp(2.5rem, 10vw, 4rem);
       }
-      
       .hero-subtitle {
         font-size: clamp(1rem, 3vw, 1.4rem);
       }
-      
       .hero-highlight {
         font-size: clamp(1.2rem, 4vw, 1.8rem);
       }
-      
       .hero-button {
         padding: 1rem 2rem;
         font-size: clamp(0.9rem, 2.5vw, 1rem);
       }
-      
-      .section {
-        padding: 3rem 1rem;
+
+      /* --- Timer Section --- */
+      .timer-section {
+        padding: 3rem 1.5rem;
       }
-      .section-title {
+      .timer-title {
         font-size: 2rem;
-      }
-      .final-title {
-        font-size: 2.5rem;
-      }
-      .final-text {
-        font-size: 1.1rem;
       }
       .timer {
         gap: 10px;
@@ -1130,44 +1154,159 @@
       .timer-number {
         font-size: 2rem;
       }
-      .timeline::before {
-        left: 30px;
+      .timer-label {
+        font-size: 0.8rem;
       }
-      .timeline-content {
-        width: calc(100% - 80px);
-        margin-left: 60px !important;
+
+      /* --- Cards --- */
+      .card {
+        padding: 2rem;
       }
-      .timeline-date {
-        position: relative;
-        width: 100%;
-        margin-bottom: 0.5rem;
-        text-align: left !important;
+      .card h3 {
+        font-size: 1.5rem;
       }
-      .timeline-dot {
-        left: 30px;
+      .card p {
+        font-size: 1rem;
       }
+
+      /* --- Quote --- */
+      .quote {
+        padding: 2rem;
+        font-size: 1.2rem;
+        margin: 2rem 0;
+      }
+      .quote::before, .quote::after {
+        font-size: 3rem;
+      }
+
+      /* --- Gallery --- */
       .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 10px;
+        gap: 15px;
+      }
+      .gallery-item {
+        height: 180px;
+      }
+      .gallery-title {
+        font-size: 1rem;
+      }
+      .gallery-date {
+        font-size: 0.8rem;
       }
       
-      /* Responsive para a seção final */
+      /* --- Lightbox --- */
+      .lightbox-content {
+        max-width: 95%;
+        max-height: 90%;
+      }
+      .lightbox-close, .lightbox-nav {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+      }
+      .lightbox-close {
+        top: 15px;
+        right: 15px;
+      }
+      .lightbox-prev {
+        left: 10px;
+      }
+      .lightbox-next {
+        right: 10px;
+      }
+
+      /* --- Timeline (Mudança mais drástica) --- */
+      .timeline::before {
+        left: 30px; /* Move a linha para a esquerda */
+      }
+      .timeline-item {
+        transform: translateX(0); /* Reseta a animação inicial */
+      }
+      .timeline-item.visible {
+        transform: translateX(0);
+      }
+      .timeline-item:nth-child(even) {
+        transform: translateX(0); /* Reseta a animação para itens pares */
+      }
+      .timeline-item:nth-child(even).visible {
+        transform: translateX(0);
+      }
+      .timeline-content {
+        width: calc(100% - 80px); /* Ocupa quase toda a largura */
+        margin-left: 60px !important; /* Espaço para a linha e o ponto */
+        padding: 1.5rem;
+      }
+      .timeline-date {
+        position: relative; /* Data fica acima do conteúdo */
+        width: 100%;
+        margin-bottom: 0.5rem;
+        text-align: left !important; /* Alinha à esquerda */
+        top: auto;
+        left: auto;
+        right: auto;
+      }
+      .timeline-dot {
+        left: 30px; /* Move o ponto para a esquerda */
+        width: 16px;
+        height: 16px;
+      }
+      .timeline-title {
+        font-size: 1.2rem;
+      }
+      .timeline-description {
+        font-size: 1rem;
+      }
+
+      /* --- Final Section --- */
+      .final-section {
+        padding: 3rem 1.5rem;
+      }
+      .final-title {
+        font-size: 2.5rem;
+      }
+      .final-subtitle {
+        font-size: 1.1rem;
+      }
       .final-message-box {
         padding: 2rem;
-        margin: 0 1rem;
       }
-      
+      .final-text {
+        font-size: 1.1rem;
+      }
       .corner-heart {
         font-size: 1.5rem;
       }
-      
       .final-signature::before,
       .final-signature::after {
-        display: none;
+        display: none; /* Esconde corações laterais para não poluir */
+      }
+      .final-button {
+        padding: 0.9rem 2rem;
+        font-size: 0.9rem;
       }
       
+      /* --- Animações de Amor --- */
       .love-message.center {
         font-size: 3rem;
+      }
+    }
+    
+    /* Ajustes finos para telas muito pequenas (ex: iPhone SE) */
+    @media (max-width: 480px) {
+      .section {
+        padding: 2.5rem 1rem;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* Força 2 colunas */
+        gap: 10px;
+      }
+      .gallery-item {
+        height: 150px;
+      }
+      .final-message-box {
+        padding: 1.5rem;
+      }
+      .final-text {
+        font-size: 1rem;
       }
     }
   </style>
